@@ -1,6 +1,4 @@
-
-
-# WlCreator v1.0
+# WlCreator v1.3
 ## Author: github.com/thelinuxchoice
 ## IG: instagram.com/thelinuxchoice
 ## github.com/thelinuxchoice/wlcreator
