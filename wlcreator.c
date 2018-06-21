@@ -1,4 +1,4 @@
-// Wordlist Creator v1.1
+// Wordlist Creator v1.2
 // Coded by @thelinuxchoice
 // Github: github.com/thelinuxchoice/wlcreator
 // Sorry the shit code, it was made on "Legend Mode" using permute algorithm
@@ -20,17 +20,17 @@ const char* charset5 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123
 const char* charset6 = "abcdefghijklmnopqrstuvwxyz!@#$%*£_";
 const char* charset7 = "abcdefghijklmnopqrstuvwxyz!@#$%*£_0123456789";
 const char* charset8 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_";
-const char* charset9 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+const char* charset9 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_0123456789";
 const char* charset10 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 const char* charset11 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_";
-const char* charset12 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_01234567";
+const char* charset12 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_0123456789";
 const char* charset13 = "0123456789!@#$%*£_";
-const char* charset14 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_0123456789";
+//const char* charset14 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_0123456789";
 
 
 
 char buffer[50];
-char chr[3], cap[3], num[3], spc[3], apatt[3];
+char chr[3], cap[3], num[3], spc[3], apatt[3], cont[3];
 int patt = 0;
 char makepatt[32];
 void permute(int level) {
@@ -216,16 +216,6 @@ void permute13(int level) {
 }
 
 
-void permute14(int level) {
-  const char* charset_ptr = charset14;
-  if(level == -1){
-    puts(buffer);
-  }else {
-   while(buffer[level]=*charset_ptr++) {
-    permute14(level - 1);
-   }
-  }
-}
 
 int main(int argc, char **argv)
 {
@@ -237,7 +227,7 @@ printf("| |/\\| | | |   | '__/ _ \\/ _` | __/ _ \\| '__| \n");
 printf("\\  /\\  / | \\__/\\ | |  __/ (_| | || (_) | |    \n");
 printf(" \\/  \\/|_|\\____/_|  \\___|\\__,_|\\__\\___/|_|    \n"); 
 printf("\n");
-  printf(":: Wordlist Creator v1.1 by @thelinuxchoice ::\n");
+  printf(":: Wordlist Creator v1.2 by @thelinuxchoice ::\n");
 
 
 if (argc <= 1) {
@@ -276,12 +266,44 @@ exit(1);
 }
 
 
-  printf("\n[*] Generating WordList...(It can take a long time)\n");
-
-
 
 //// y n n n
  if ((!strcmp(chr, "y") && (!strcmp(cap, "n")) && (!strcmp(num, "n")) && (!strcmp(spc, "n")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 26;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -310,16 +332,52 @@ exit(1);
     close(save_out);
     close(save_err);
 
-  
-  
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
 }
 
 
-/// n y n n
+/// n y n n 0
 
 
 
  if ((!strcmp(chr, "n") && (!strcmp(cap, "y")) && (!strcmp(num, "n")) && (!strcmp(spc, "n")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 26;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
 
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
@@ -350,11 +408,52 @@ exit(1);
     close(save_out);
     close(save_err);
 
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
   
 }
 
-/// y y n n
+/// y y n n 3
  if ((!strcmp(chr, "y") && (!strcmp(cap, "y")) && (!strcmp(num, "n")) && (!strcmp(spc, "n")))) {
+
+int length1;
+int char1= 52;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= char1;
+        --length1;
+}
+
+int length2;
+int length3;
+int length4 =1;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+length4;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -382,13 +481,50 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
   
   
 }
 //// y y y n 5
 
  if ((!strcmp(chr, "y") && (!strcmp(cap, "y")) && (!strcmp(num, "y")) && (!strcmp(spc, "n")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 62;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -416,14 +552,50 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
   
   
 }
 
-/// y y y n 9
+/// y y y y 9
 
- if ((!strcmp(chr, "y") && (!strcmp(cap, "y")) && (!strcmp(num, "y")) && (!strcmp(spc, "n")))) {
+ if ((!strcmp(chr, "y") && (!strcmp(cap, "y")) && (!strcmp(num, "y")) && (!strcmp(spc, "y")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 70;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -451,7 +623,10 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
   
   
 }
@@ -459,6 +634,40 @@ exit(1);
 /// n y y n = 10
 
  if ((!strcmp(chr, "n") && (!strcmp(cap, "y")) && (!strcmp(num, "y")) && (!strcmp(spc, "n")))) {
+
+int length1;
+long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 36;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -487,6 +696,10 @@ exit(1);
     close(save_out);
     close(save_err);
 
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
   
   
 }
@@ -495,6 +708,41 @@ exit(1);
 /// n y y y 12
 
  if ((!strcmp(chr, "n") && (!strcmp(cap, "y")) && (!strcmp(num, "y")) && (!strcmp(spc, "y")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 44;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -522,7 +770,10 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
   
   
 }
@@ -530,6 +781,40 @@ exit(1);
 // ny ny 11
 
  if ((!strcmp(chr, "n") && (!strcmp(cap, "y")) && (!strcmp(num, "n")) && (!strcmp(spc, "y")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 34;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -557,13 +842,52 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
+  
   
   
 }
 /// n n y n 1
 
  if ((!strcmp(chr, "n") && (!strcmp(cap, "n")) && (!strcmp(num, "y")) && (!strcmp(spc, "n")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 10;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -591,13 +915,50 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
     
 }
 
 /// n n y y 13
 
  if ((!strcmp(chr, "n") && (!strcmp(cap, "n")) && (!strcmp(num, "y")) && (!strcmp(spc, "y")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 18;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -625,12 +986,50 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
     
 }
 /// n n n y 2
 
  if ((!strcmp(chr, "n") && (!strcmp(cap, "n")) && (!strcmp(num, "n")) && (!strcmp(spc, "y")))) {
+
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 8;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -658,13 +1057,50 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
     
 }
 
 /// y n y n 4
 
  if ((!strcmp(chr, "y") && (!strcmp(cap, "n")) && (!strcmp(num, "y")) && (!strcmp(spc, "n")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 36;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -692,13 +1128,51 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
     
 }
 
 /// y n n y 6
 
  if ((!strcmp(chr, "y") && (!strcmp(cap, "n")) && (!strcmp(num, "n")) && (!strcmp(spc, "y")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 34;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -726,13 +1200,51 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
     
 }
 
 /// y n y y 7
 
  if ((!strcmp(chr, "y") && (!strcmp(cap, "n")) && (!strcmp(num, "y")) && (!strcmp(spc, "y")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 44;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -760,13 +1272,51 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
     
 }
 
 /// y y n y 8
 
  if ((!strcmp(chr, "y") && (!strcmp(cap, "y")) && (!strcmp(num, "n")) && (!strcmp(spc, "y")))) {
+
+int length1;
+long long result=1;
+long double total;
+    sscanf(argv[1], "%d", &length1); 
+
+  while (length1 != 0)
+{
+        result *= 60;
+        --length1;
+}
+
+int length2;
+int length3;
+float totalm;
+float totalg;
+float totalt;
+    sscanf(argv[1], "%d", &length2); 
+length3=length2+1;
+total = result*length3;
+totalm=total/(float)1048576;
+totalg=total/(float)1073741824;
+totalt=total/(float)1099511627776;
+printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Size in:\n");
+printf("\nMB:%.2f\n",totalm);
+printf("\nGB:%.2f\n",totalg);
+printf("\nTB:%.2f\n",totalt);
+    printf("\n[*] Continue? [y/n]: "); 
+    scanf("%s",&cont);  
+   if ((!strcmp(cont, "y"))) {
+
+    printf("\n[*] Generating WordList...(It can take a long time)\n");
+
+
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
     int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
@@ -794,44 +1344,15 @@ exit(1);
 
     close(save_out);
     close(save_err);
-
+}
+   if ((!strcmp(apatt, "n"))) {
+exit(1);
+}
   
   
 }
 
-/// y y y y 14
 
- if ((!strcmp(chr, "y") && (!strcmp(cap, "y")) && (!strcmp(num, "y")) && (!strcmp(spc, "y")))) {
-    remove("wordlist.txt");
-    setvbuf(stdout, NULL, _IONBF, 0);
-    int out = open("wordlist.txt", O_RDWR|O_CREAT|O_APPEND, 0600);
-    if (-1 == out) { perror("opening wordlist.txt"); return 255; }
-
-    int err = open("cerr.log", O_RDWR|O_CREAT|O_APPEND, 0600);
-    if (-1 == err) { perror("opening cerr.log"); return 255; }
-
-    int save_out = dup(fileno(stdout));
-    int save_err = dup(fileno(stderr));
-
-    if (-1 == dup2(out, fileno(stdout))) { perror("cannot redirect stdout"); return 255; }
-    if (-1 == dup2(err, fileno(stderr))) { perror("cannot redirect stderr"); return 255; }
-/////
-    int length;
-    sscanf(argv[1], "%d", &length); 
-    buffer[length]='\0';
-    permute14(length - 1);
-///////
-    fflush(stdout); close(out);
-    fflush(stderr); close(err);
-
-    dup2(save_out, fileno(stdout));
-    dup2(save_err, fileno(stderr));
-
-    close(save_out);
-    close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
-    
-}
   if ( patt == 1) {
     FILE *fr, *fw;
     char buffer[10000];
@@ -893,5 +1414,3 @@ exit(1);
 
   return 0;
 }
-
-
