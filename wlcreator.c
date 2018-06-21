@@ -271,7 +271,7 @@ exit(1);
  if ((!strcmp(chr, "y") && (!strcmp(cap, "n")) && (!strcmp(num, "n")) && (!strcmp(spc, "n")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -292,7 +292,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -333,7 +333,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_err);
 
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
 }
@@ -346,7 +346,7 @@ exit(1);
  if ((!strcmp(chr, "n") && (!strcmp(cap, "y")) && (!strcmp(num, "n")) && (!strcmp(spc, "n")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -367,7 +367,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -409,7 +409,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_err);
 
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
   
@@ -420,7 +420,7 @@ exit(1);
 
 int length1;
 int char1= 52;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -443,7 +443,7 @@ totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
 
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -482,7 +482,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
   
@@ -493,7 +493,7 @@ exit(1);
  if ((!strcmp(chr, "y") && (!strcmp(cap, "y")) && (!strcmp(num, "y")) && (!strcmp(spc, "n")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -514,7 +514,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -553,7 +553,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
   
@@ -565,7 +565,7 @@ exit(1);
  if ((!strcmp(chr, "y") && (!strcmp(cap, "y")) && (!strcmp(num, "y")) && (!strcmp(spc, "y")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -586,7 +586,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -624,7 +624,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
   
@@ -657,7 +657,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -697,7 +697,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_err);
 
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
   
@@ -710,7 +710,7 @@ exit(1);
  if ((!strcmp(chr, "n") && (!strcmp(cap, "y")) && (!strcmp(num, "y")) && (!strcmp(spc, "y")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -731,7 +731,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -771,7 +771,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
   
@@ -783,7 +783,7 @@ exit(1);
  if ((!strcmp(chr, "n") && (!strcmp(cap, "y")) && (!strcmp(num, "n")) && (!strcmp(spc, "y")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -804,7 +804,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -843,7 +843,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
   
@@ -855,7 +855,7 @@ exit(1);
  if ((!strcmp(chr, "n") && (!strcmp(cap, "n")) && (!strcmp(num, "y")) && (!strcmp(spc, "n")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -876,7 +876,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -916,7 +916,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
     
@@ -927,7 +927,7 @@ exit(1);
  if ((!strcmp(chr, "n") && (!strcmp(cap, "n")) && (!strcmp(num, "y")) && (!strcmp(spc, "y")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -948,7 +948,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -987,7 +987,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
     
@@ -998,7 +998,7 @@ exit(1);
 
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -1019,7 +1019,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -1058,7 +1058,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
     
@@ -1069,7 +1069,7 @@ exit(1);
  if ((!strcmp(chr, "y") && (!strcmp(cap, "n")) && (!strcmp(num, "y")) && (!strcmp(spc, "n")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -1090,7 +1090,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -1129,7 +1129,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
     
@@ -1140,7 +1140,7 @@ exit(1);
  if ((!strcmp(chr, "y") && (!strcmp(cap, "n")) && (!strcmp(num, "n")) && (!strcmp(spc, "y")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -1161,7 +1161,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -1201,7 +1201,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
     
@@ -1212,7 +1212,7 @@ exit(1);
  if ((!strcmp(chr, "y") && (!strcmp(cap, "n")) && (!strcmp(num, "y")) && (!strcmp(spc, "y")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -1233,7 +1233,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -1273,7 +1273,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
     
@@ -1284,7 +1284,7 @@ exit(1);
  if ((!strcmp(chr, "y") && (!strcmp(cap, "y")) && (!strcmp(num, "n")) && (!strcmp(spc, "y")))) {
 
 int length1;
-long long result=1;
+unsigned long long int result=1;
 long double total;
     sscanf(argv[1], "%d", &length1); 
 
@@ -1305,7 +1305,7 @@ total = result*length3;
 totalm=total/(float)1048576;
 totalg=total/(float)1073741824;
 totalt=total/(float)1099511627776;
-printf("\n[::] Total words:%u\n",result);
+printf("\n[::] Total words:%llu\n",result);
 printf("\n[::] Size in:\n");
 printf("\nMB:%.2f\n",totalm);
 printf("\nGB:%.2f\n",totalg);
@@ -1345,7 +1345,7 @@ printf("\nTB:%.2f\n",totalt);
     close(save_out);
     close(save_err);
 }
-   if ((!strcmp(apatt, "n"))) {
+   if ((!strcmp(cont, "n"))) {
 exit(1);
 }
   
