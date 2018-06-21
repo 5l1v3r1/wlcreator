@@ -1,4 +1,4 @@
-// Wordlist Creator v1.2
+// Wordlist Creator v1.3
 // Coded by @thelinuxchoice
 // Github: github.com/thelinuxchoice/wlcreator
 // Sorry the shit code, it was made on "Legend Mode" using permute algorithm
@@ -227,7 +227,7 @@ printf("| |/\\| | | |   | '__/ _ \\/ _` | __/ _ \\| '__| \n");
 printf("\\  /\\  / | \\__/\\ | |  __/ (_| | || (_) | |    \n");
 printf(" \\/  \\/|_|\\____/_|  \\___|\\__,_|\\__\\___/|_|    \n"); 
 printf("\n");
-  printf(":: Wordlist Creator v1.2 by @thelinuxchoice ::\n");
+  printf(":: Wordlist Creator v1.3 by @thelinuxchoice ::\n");
 
 
 if (argc <= 1) {
